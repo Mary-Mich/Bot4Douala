@@ -1,0 +1,28 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-etablissement",
+      "2": "I-etablissement",
+      "3": "L-etablissement",
+      "4": "U-etablissement",
+      "5": "B-programme",
+      "6": "I-programme",
+      "7": "L-programme",
+      "8": "U-programme",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-etablissement": 1,
+      "I-etablissement": 2,
+      "L-etablissement": 3,
+      "U-etablissement": 4,
+      "B-programme": 5,
+      "I-programme": 6,
+      "L-programme": 7,
+      "U-programme": 8,
+      "O": 0
+    },
+    "num_tags": 9
+  }
+]

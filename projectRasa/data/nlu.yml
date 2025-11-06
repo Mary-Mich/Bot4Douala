@@ -1,0 +1,356 @@
+version: "3.1"
+
+nlu:
+- intent: saluer
+  examples: |
+    - Bonjour
+    - Salut
+    - Bonsoir
+    - Hello
+    - Coucou
+    - Yo
+    - Bonjour, j'ai besoin d'aide
+    - Salut, ça va ?
+    - Hey
+    - Bonjour Madame
+    - Bonjour Monsieur
+
+- intent: dire_au_revoir
+  examples: |
+    - Au revoir
+    - Bye
+    - À plusp
+    - Je me casse
+    - À bientôt
+    - Bonne journée
+    - Ciao
+    - À la prochaine
+    - Je quitte
+
+- intent: remercier
+  examples: |
+    - Merci
+    - Merci beaucoup
+    - Je te remercie
+    - Thanks
+    - Merci pour ton aide
+    - Je suis reconnaissant
+    - Merci bien
+    - Merci infiniment
+
+- intent: besoin_orientation
+  examples: |
+    - Je ne sais pas quoi choisir
+    - J'ai besoin d'aide pour m'orienter
+    - Quelle filière me conseilles-tu ?
+    - Je suis perdu dans mes choix
+    - Aide-moi à choisir une filière
+    - Je ne sais pas quoi faire après le bac
+    - Qu'est-ce que je peux étudier ?
+    - Orientation scolaire
+    - Je suis indécis
+    - Aidez-moi à me décider
+    - Quelle formation pour moi ?
+
+- intent: demander_filieres
+  examples: |
+    - Quelles sont les filières disponibles ?
+    - Listez tous les programmes
+    - Qu'est-ce que vous proposez comme formations ?
+    - Montrez-moi toutes les filières
+    - Quels sont les cursus disponibles ?
+    - Je veux voir l'offre de formation
+    - Programmes proposés
+    - Quelles formations avez-vous ?
+    - Liste des formations
+    - Quels programmes existent ?
+    - Pouvez-vous me lister toutes les formations offertes ?
+    - Je voudrais connaître les filières proposées à l'université
+    - Qu'est-ce qu'on peut étudier à l'Université de Douala ?
+
+- intent: demander_details_filiere
+  examples: |
+    - Parle-moi de [médecine](filiere)
+    - Donne-moi des infos sur [informatique](filiere)
+    - Je veux connaître [droit](filiere)
+    - [Génie civil](filiere) c'est quoi ?
+    - Renseignements sur [économie](filiere)
+    - Détails sur [biologie](filiere)
+    - C'est quoi [psychologie](filiere) ?
+    - Informations sur [gestion](filiere)
+    - Décris-moi [médecine]((filiere)
+
+- intent: demander_infos_pratiques
+  examples: |
+    - Quelles sont les dates limites ?
+    - Date de préinscription
+    - Jusqu'à quand peut-on se préinscrire ?
+    - Date limite de dépôt
+    - Quand est-ce que les préinscriptions ferment ?
+    - Délai de préinscription
+    - Date butoir
+    - Quand faut-il se préinscrire ?
+    - Quels documents faut-il ?
+    - Liste des documents requis
+    - Quels papiers dois-je fournir ?
+    - Documents nécessaires
+    - Pièces à fournir pour la préinscription
+    - Qu'est-ce qu'il faut comme documents ?
+    - Documents obligatoires
+    - Dossier de préinscription
+    - Quels justificatifs ?
+    - Papiers exigés
+    - Quels sont les frais de scolarité ?
+    - Combien coûte la formation ?
+    - Quel est le prix de la préinscription ?
+    - Frais de scolarité
+    - Je veux connaître les frais de préinscription
+    - Tarifs des études
+    - Coût des études
+    - Tarifs des préinscriptions
+    - Prix de la formation
+    - Combien ça coûte ?
+
+- intent: demander_filieres_domaine
+  examples: |
+    - Quelles filières en [sciences](domaine) ?
+    - Programmes en [santé](domaine)
+    - Formations en [droit](domaine)
+    - Filières [technologiques](domaine)
+    - [Sciences économiques](domaine)
+    - [Lettres et sciences humaines](domaine)
+    - [Éducation](domaine)
+    - Qu'est-ce que vous avez en [technologie](domaine) ?
+
+
+- intent: demander_guide_preinscription
+  examples: |
+    - Comment faire la préinscription ?
+    - Quelles sont les étapes pour se préinscrire en ligne?
+    - Processus de préinscription en ligne
+    - Guide de préinscription en ligne
+    - Étapes pour la préinscription
+    - Comment se préinscrire ?
+    - Démarches pour se préinscrire
+    - Procédure d'admission
+    - Préinscription en ligne
+    - Étapes préinscription
+    - Comment me préinscrire en ligne ?
+    - Je veux me préinscrire en ligne
+    - Comment faire ma préinscription ?
+    - Je souhaite me préinscrire
+    - Débuter la préinscription
+    - Commencer la préinscription en ligne
+    - Je veux me préinscrire
+    - Je veux commencer mon préinscription
+    - Guide-moi pour ma préinscription
+   
+   
+- intent: demander_etablissements
+  examples: |
+    - Quels sont les établissements ?
+    - Montre-moi les facultés
+    - Liste les instituts
+    - Quelles sont les écoles ?
+    - Je veux voir les établissements
+    - Différence entre faculté et institut
+    - Types d'établissements
+    - Facultés disponibles
+    - Instituts disponibles
+    - Écoles disponibles
+
+- intent: demander_debouches
+  examples: |
+    - Quels sont les débouchés ?
+    - Opportunités de carrière
+    - Métiers possibles
+    - Emplois après les études
+    - Qu'est-ce que je peux faire après ?
+    - Débouchés professionnels
+    - Métiers après la formation
+    - Perspectives d'emploi
+    - Perspectives d'emploi
+    - Quels métiers avec [médecine](filiere) ?
+    - Débouchés de [l'informatique](filiere)
+
+- intent: demander_conditions_admission
+  examples: |
+    - Quels sont les pré-requis ?
+    - Conditions d'admission
+    - Niveau requis
+    - Qu'est-ce qu'il faut pour être accepté ?
+    - Critères d'admission
+    - Bac requis
+    - Quelles conditions ?
+    - Pré-requis académiques
+    - Conditions pour [droit](filiere)
+
+- intent: demander_filieres_classiques
+  examples: |
+    - Filières classiques
+    - Formations fondamentales
+    - Programmes classiques
+    - Licences classiques
+    - Filières théoriques
+    - Études fondamentales
+    - Quelles filières classiques à la faculté des sciences ?
+    - Programmes classiques en sciences
+
+- intent: demander_filieres_professionnelles
+  examples: |
+    - Filières professionnelles
+    - Formations professionnelles
+    - Programmes professionnels
+    - Licences professionnelles
+    - Filières pro
+    - Formations pratiques
+    - Études professionnelles
+    - Quelles filières professionnelles à la faculté des sciences ?
+    - programmes pro en sciences
+
+- intent: choisir_etablissement
+  examples: |
+    - Je choisis la [faculté des sciences](etablissement)
+    - Je préfère l'[IUT](etablissement)
+    - [Faculté de médecine](etablissement) me plaît
+    - Mon choix est [ENS](etablissement)
+    - Je veux aller à la [faculté de droit](etablissement)
+    - Je sélectionne [l'INJS](etablissement)
+    - [ESSEC](etablissement) m'intéresse
+    - Je prends [l'ENSPY](etablissement)
+
+- intent: fournir_choix_filiere
+  examples: |
+    - Je veux faire [médecine])(filiere)
+    - [Informatique])(filiere) m'intéresse
+    - Je choisis [droit])(filiere)
+    - [Génie civil])(filiere)
+    - Je suis intéressé par [Informatique])(filiere)
+    - Je veux me préinscrire en [sciences])(filiere)
+    - Mon choix est [économie])(filiere)
+    - Je préfère [biologie](filiere)
+    - [Gestion](filiere) me plaît
+
+- intent: fournir_domaine_interet
+  examples: |
+    - Je m'intéresse aux [sciences](domaine)
+    - Je suis passionné par la [santé](domaine)
+    - Mes centres d'intérêt sont [technologiques](domaine)
+    - J'aime le [droit](domaine)
+    - [sciences](domaine)
+    - Je préfère les [sciences économiques](domaine)
+    - Je me vois dans les [lettres](domaine)
+    - L'[éducation](domaine) me passionne
+    - Je veux travailler dans la [santé](domaine)
+    - Mes intérêts sont [scientifiques](domaine)
+    - Je souhaite étudier en [technologie](domaine)
+    - Je veux me spécialiser en [droit](domaine)
+    - Le domaine [santé](domaine) m'attire
+    - Je penche pour les [sciences](domaine)
+    - Mes préférences vont aux [lettres](domaine)
+
+- intent: demander_filieres_etablissement
+  examples: |
+    - Quelles sont les filières de la [faculté des sciences](etablissement) ?
+    - Programmes à l'[IUT](etablissement)
+    - Formations à la [faculté de médecine](etablissement)
+    - Filières disponibles à l'[ENS](etablissement)
+    - Que propose la [faculté de droit](etablissement) ?
+    - Cours à l'[INJS](etablissement)
+    - Offre de formation [ESSEC](etablissement)
+    - [Faculté des sciences](etablissement) filières
+    - Qu'étudie-t-on à la [faculté des lettres](etablissement) ?
+
+- intent: demander_etablissements_domaine
+  examples: |
+    - Quels établissements pour [sciences](domaine) ?
+    - Je veux les établissements en [santé](domaine)
+    - Établissements dans le domaine [technologie](domaine)
+    - Liste des établissements en [droit](domaine)
+    - Quelles écoles en [économie](domaine) ?
+    - Facultés en [lettres](domaine)
+    - Instituts en [sciences](domaine)
+    - Établissements pour [sciences humaines](domaine)
+    - Où étudier les [sciences](domaine) ?
+    - Établissements spécialisés en [médecine](domaine)
+    - Campus pour [ingénierie](domaine)
+    - Centres de formation en [gestion](domaine)
+
+- intent: confirmer
+  examples: |
+    - Oui
+    - Oui c'est ça
+    - Exactement
+    - C'est correct
+    - Tout à fait
+    - D'accord
+    - OK
+    - Parfait
+    - Confirmé
+
+- intent: refuser
+  examples: |
+    - Non
+    - Pas ça
+    - Ce n'est pas ça
+    - Faux
+    - Incorrect
+    - Je ne pense pas
+    - Pas du tout
+
+- intent: hors_sujet
+  examples: |
+    - Quel temps fait-il ?
+    - Raconte-moi une blague
+    - Qui est le président de la France ?
+    - Quelle est la capitale du Japon ?
+    - Combien font 2+2 ?
+    - Tu es intelligent
+    - Quelle est ta couleur préférée ?
+    - Comment vas-tu ?
+    - Quel est ton nom ?
+
+- intent: fallback
+  examples: |
+    - Je ne comprends pas
+    - Qu'est-ce que tu dis ?
+    - Répète s'il te plaît
+    - Je n'ai pas saisi
+
+- lookup: filiere
+  examples: |
+    - médecine
+    - informatique
+    - droit
+    - génie civil
+    - sciences
+    - économie
+    - biologie
+    - gestion
+    - psychologie
+    - mathématiques
+    - physique
+    - chimie
+
+- lookup: domaine
+  examples: |
+    - sciences
+    - santé
+    - droit
+    - technologie
+    - économie
+    - lettres
+    - éducation
+    - sciences humaines
+    - sciences sociales
+
+- lookup: etablissement
+  examples: |
+    - faculté de médecine
+    - IUT
+    - faculté des sciences
+    - INJS
+    - ENS
+    - faculté de droit
+    - ESSEC
+    - ENSPY

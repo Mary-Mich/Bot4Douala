@@ -1,0 +1,13 @@
+# Application Flask
+flask==2.3.3
+flask-sqlalchemy==3.0.5
+flask-login==0.6.3
+werkzeug==2.3.7
+
+# API et requêtes
+requests==2.31.0
+
+# Rasa (optionnel - si vous l'utilisez)
+rasa==3.6.15
+
+# SQLite est inclus dans Python, pas besoin de l'installer

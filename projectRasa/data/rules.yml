@@ -1,0 +1,107 @@
+version: "3.1"
+
+rules:
+
+# Règles d'accueil et basiques
+
+- rule: Salutation immédiate
+  steps:
+  - intent: saluer
+  - action: utter_saluer
+
+- rule: Au revoir immédiat
+  steps:
+  - intent: dire_au_revoir
+  - action: utter_dire_au_revoir
+
+- rule: Remerciement
+  steps:
+  - intent: remercier
+  - action: utter_remercier
+
+# Règles pour les demandes générales
+
+- rule: Demande de filières
+  steps:
+  - intent: demander_filieres
+  - action: utter_demander_filieres
+
+- rule: Demande établissements
+  steps:
+  - intent: demander_etablissements
+  - action: action_liste_etablissements
+
+- rule: Demande guide préinscription
+  steps:
+  - intent: demander_guide_preinscription
+  - action: action_guide_preinscription
+
+- rule: Demande informations pratiques
+  steps:
+  - intent: demander_infos_pratiques
+  - action: action_informations_pratiques
+
+- rule: Suggestion établissements après domaine
+  steps:
+  - intent: fournir_domaine_interet
+    entities:
+    - domaine
+  - slot_was_set:
+    - domaine_interet : null
+  - action: utter_suggest_etablissements
+  - action: action_suggest_etablissements_domaine
+
+- rule: Suggestion établissements par domaine
+  steps:
+  - intent: demander_etablissements_domaine
+  - action: action_suggest_etablissements_domaine
+
+- rule: Choix d'établissement après suggestion
+  steps:
+  - intent: demander_filieres_etablissement
+  - action: action_filieres_etablissement
+
+# Règles pour les demandes specifiques
+- rule: Demande conditions admission
+  steps:
+  - intent: demander_conditions_admission
+  - action: utter_demander_conditions_admission
+
+- rule: Demande débouchés
+  steps:
+  - intent: demander_debouches
+  - action: utter_demander_debouches
+
+# Règles pour les types de filieres
+
+- rule: Filières professionnelles sciences
+  steps:
+  - intent: demander_filieres_professionnelles
+  - action: action_filieres_professionnelles_science
+
+- rule: Filières classiques sciences
+  steps:
+  - intent: demander_filieres_classiques
+  - action: action_filieres_classiques_science
+
+# Règles de fallback
+- rule: Réponse fallback
+  steps:
+  - intent: fallback
+  - action: utter_fallback
+
+- rule: Réponse hors sujet
+  steps:
+  - intent: hors_sujet
+  - action: utter_hors_sujet
+
+# Règles de confirmation/refus
+- rule: Confirmation
+  steps:
+  - intent: confirmer
+  - action: action_gerer_confirmation
+
+- rule: Refus
+  steps:
+  - intent: refuser
+  - action: action_gerer_refuser

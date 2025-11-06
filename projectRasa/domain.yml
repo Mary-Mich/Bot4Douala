@@ -1,0 +1,124 @@
+version: "3.1"
+
+intents:
+  - saluer
+  - dire_au_revoir
+  - remercier
+  - besoin_orientation
+  - demander_filieres
+  - demander_details_filiere
+  - demander_filieres_domaine
+  - demander_guide_preinscription
+  - demander_infos_pratiques
+  - demander_etablissements
+  - demander_filieres_etablissement
+  - demander_debouches
+  - demander_conditions_admission
+  - demander_filieres_professionnelles
+  - demander_filieres_classiques
+  - fournir_choix_filiere
+  - demander_etablissements_domaine
+  - choisir_etablissement
+  - fournir_domaine_interet
+  - confirmer
+  - refuser
+  - hors_sujet
+  - fallback
+
+entities:
+  - filiere
+  - domaine
+
+slots:
+  filiere_choisie:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: filiere
+
+  domaine_interet:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: domaine
+
+  dernier_etablissement:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: custom
+
+responses:
+  utter_saluer:
+  - text: "Bonjour ! Bienvenue à l'Université de Douala. Je suis là pour vous orienter vers les filières qui correspondent à vos centres d'intérêt et vous guider dans le processus de préinscription. Comment puis-je vous aider ?"
+  - text: "Salut ! Je suis l'assistant virtuel de l'Université de Douala. Je peux vous aider à découvrir nos formations et vous expliquer les démarches de préinscription. Que souhaitez-vous savoir ?"
+  - text: "Bonsoir ! Bienvenue sur la plateforme d'orientation de l'Université de Douala. Je suis à votre disposition pour vous accompagner dans votre choix de formation."
+
+  utter_dire_au_revoir:
+  - text: "Au revoir ! Bonne chance pour vos démarches à l'Université de Douala."
+  - text: "À bientôt ! N'hésitez pas à revenir si vous avez d'autres questions."
+  - text: "Bonne journée ! Bon courage pour votre projet d'études."
+
+  utter_remercier:
+  - text: "Je vous en prie ! Bon courage pour votre préinscription."
+  - text: "De rien ! N'oubliez pas de consulter régulièrement notre site pour les actualités."
+  - text: "Avec plaisir ! N'hésitez pas si vous avez d'autres questions."
+
+  utter_besoin_orientation:
+  - text: "Je comprends que choisir une filière peut être difficile. Pour mieux vous orienter, pourriez-vous me dire quels sont vos centres d'intérêt ? (sciences, santé, droit, technologie, commerce, arts, etc.)"
+  - text: "L'orientation est une étape importante. Avez-vous des domaines qui vous intéressent particulièrement ? Cela m'aidera à vous proposer des filières adaptées."
+
+  utter_suggest_etablissements:
+  - text: "Voici les établissements qui pourraient vous correspondre dans ce domaine. Lequel vous intéresse ?"
+  - text: "Plusieurs établissements proposent des formations dans ce domaine. Avez-vous une préférence ?"
+
+  utter_demander_filieres:
+  - text: "L'Université de Douala propose une large gamme de formations organisées par facultés et instituts. Voici les principaux domaines : Sciences de la Santé, Sciences et Technologies, Sciences Juridiques et Politiques, Sciences Économiques et de Gestion, Lettres et Sciences Humaines. Quel domaine vous intéresse particulièrement ?"
+  - text: "Nous avons de nombreuses filières réparties dans différents établissements. Souhaitez-vous explorer un domaine spécifique ou voir l'ensemble de notre offre de formation ?"
+
+  utter_demander_conditions_admission:
+  - text: "Les conditions générales d'admission incluent généralement l'obtention du baccalauréat ou équivalent. Des conditions spécifiques peuvent s'appliquer selon les filières. Consultez les prérequis détaillés sur le site de l'université."
+  - text: "Pour la plupart des filières, il faut être titulaire du baccalauréat. Certaines formations peuvent avoir des conditions supplémentaires (notes minimales, tests, entretiens)."
+
+  utter_demander_debouches:
+  - text: "Les débouchés varient selon la filière choisie. En général, nos formations préparent à l'insertion professionnelle ou à la poursuite d'études. Pour des informations précises sur les débouchés d'une filière spécifique, consultez sa fiche détaillée sur notre site."
+  - text: "Chaque formation offre des perspectives professionnelles spécifiques. Voulez-vous connaître les débouchés d'une filière en particulier ?"
+
+  utter_fournir_choix_filiere:
+  - text: "Excellent choix ! La filière {filiere} offre de belles perspectives. Voulez-vous que je vous guide sur les étapes de préinscription pour cette filière ou souhaitez-vous plus d'informations sur cette filièresx  ?"
+  - text: "Très bon choix ! {filiere} est une formation de qualité. Je peux vous donner plus de détails ou vous expliquer la procédure de préinscription."
+
+  utter_confirmer:
+  - text: "Parfait ! Continuons."
+  - text: "D'accord, je comprends."
+
+  utter_refuser:
+  - text: "D'accord, reprenons depuis le début."
+  - text: "Je vois, laissons cela de côté."
+
+  utter_hors_sujet:
+  - text: "Désolé, je suis spécialisé dans l'orientation et la préinscription à l'Université de Douala. Je peux vous aider à choisir une filière ou vous expliquer les démarches d'inscription."
+  - text: "Je suis conçu pour vous aider avec l'orientation universitaire à l'Université de Douala. Avez-vous des questions sur nos formations ou le processus d'inscription ?"
+
+  utter_fallback:
+  - text: "Je n'ai pas bien compris. Pouvez-vous reformuler ? Je peux vous aider avec le choix des filières et le guide de préinscription à l'Université de Douala."
+  - text: "Désolé, je n'ai pas saisi votre demande. Pouvez-vous être plus précis ? Je peux vous aider avec l'orientation et l'inscription."
+
+actions:
+  - action_guide_orientation
+  - action_detail_filiere
+  - action_liste_etablissements
+  - action_guide_preinscription
+  - action_filieres_professionnelles_science
+  - action_filieres_classiques_science
+  - action_comparer_filieres
+  - action_suggest_filieres
+  - action_informations_pratiques
+  - action_suggest_etablissements_domaine
+  - action_filieres_etablissement
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

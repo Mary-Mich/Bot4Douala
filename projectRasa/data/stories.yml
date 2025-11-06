@@ -1,0 +1,159 @@
+version: "3.1"
+
+stories:
+
+- story: Parcours orientation complète
+  steps:
+  - intent: saluer
+  - action: utter_saluer
+  - intent: besoin_orientation
+  - action: utter_besoin_orientation
+  - intent: fournir_domaine_interet
+    entities:
+    - domaine
+  - action: action_guide_orientation
+  - intent: demander_details_filiere
+    entities:
+    - filiere
+  - action: action_detail_filiere
+  - intent: demander_guide_preinscription
+  - action: action_guide_preinscription
+  - intent: remercier
+  - action: utter_remercier
+  - intent: dire_au_revoir
+  - action: utter_dire_au_revoir
+
+- story: Parcours domaine -> établissement -> filières
+  steps:
+  - intent: besoin_orientation
+  - action: utter_besoin_orientation
+  - intent: fournir_domaine_interet
+    entities:
+    - domaine
+  - action: action_suggest_etablissements_domaine
+  - intent: choisir_etablissement
+    entities:
+    - etablissement
+  - action: action_filieres_etablissement
+  - intent: fournir_choix_filiere
+    entities:
+    - filiere
+  - action: utter_fournir_choix_filiere
+  - intent: confirmer
+  - action: action_gerer_confirmation
+  # action_guide_preinscription
+
+- story: Exploration des établissements
+  steps:
+  - intent: demander_etablissements
+  - action: action_liste_etablissements
+  - intent: demander_filieres
+  - action: utter_demander_filieres
+  - intent: fournir_domaine_interet
+    entities:
+    - domaine
+  - action: action_suggest_etablissements_domaine
+
+- story: Recherche directe établissements par domaine
+  steps:
+  - intent: demander_etablissements_domaine
+    entities:
+    - domaine
+  - action: action_suggest_etablissements_domaine
+  - intent: demander_filieres_etablissement
+    entities:
+    - etablissement
+  - action: action_filieres_etablissement
+
+- story: Navigation complète avec domaine
+  steps:
+  - intent: saluer
+  - action: utter_saluer
+  - intent: demander_filieres_domaine
+    entities:
+    - domaine
+  - action: action_guide_orientation
+  - intent: demander_etablissements_domaine
+  - action: action_suggest_etablissements_domaine
+
+- story: Recherche filière spécifique
+  steps:
+  - intent: saluer
+  - action: utter_saluer
+  - intent: demander_details_filiere
+    entities:
+    - filiere
+  - action: action_detail_filiere
+  - intent: demander_debouches
+  - action: utter_demander_debouches
+  - intent: demander_conditions_admission
+  - action: utter_demander_conditions_admission
+
+- story: Processus préinscription
+  steps:
+  - intent: demander_guide_preinscription
+  - action: action_guide_preinscription
+  - intent: demander_infos_pratiques
+  - action: action_informations_pratiques
+  - intent: demander_etablissements
+  - action: action_liste_etablissements
+
+- story: Comparaison filières sciences
+  steps:
+  - intent: demander_filieres_professionnelles
+  - action: action_filieres_professionnelles_science
+  - intent: demander_filieres_classiques
+  - action: action_filieres_classiques_science
+  - intent: fournir_choix_filiere
+    entities:
+    - filiere
+  - action: action_comparer_filieres
+
+- story: Parcours par domaine
+  steps:
+  - intent: demander_filieres_domaine
+    entities:
+    - domaine
+  - action: action_guide_orientation
+  - intent: fournir_choix_filiere
+    entities:
+    - filiere
+  - action: utter_fournir_choix_filiere
+  - intent: confirmer
+  - intent : action_gerer_confirmation
+  # action: action_guide_preinscription
+
+- story: Salutation simple
+  steps:
+  - intent: saluer
+  - action: utter_saluer
+  - intent: dire_au_revoir
+  - action: utter_dire_au_revoir
+
+- story: Demande établissements
+  steps:
+  - intent: demander_etablissements
+  - action: action_liste_etablissements
+  - intent: demander_filieres
+  - action: utter_demander_filieres
+
+- story: Informations pratiques complètes
+  steps:
+  - intent: demander_infos_pratiques
+  - action: action_informations_pratiques
+  - intent: demander_conditions_admission
+  - action: utter_demander_conditions_admission
+
+- story: Fallback et correction
+  steps:
+  - intent: fallback
+  - action: utter_fallback
+  - intent: demander_filieres
+  - action: utter_demander_filieres
+
+- story: Hors sujet
+  steps:
+  - intent: hors_sujet
+  - action: utter_hors_sujet
+  - intent: demander_filieres
+  - action: utter_demander_filieres

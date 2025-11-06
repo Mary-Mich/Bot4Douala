@@ -1,0 +1,10 @@
+[
+  {
+    "name": "programme",
+    "pattern": "(\\bmédecine\\b|\\binformatique\\b|\\bdroit\\b|\\bgénie\\ civil\\b|\\bsciences\\b|\\béconomie\\b|\\bbiologie\\b|\\bgestion\\b|\\bpsychologie\\b|\\bmathématiques\\b|\\bphysique\\b|\\bchimie\\b)"
+  },
+  {
+    "name": "etablissement",
+    "pattern": "(\\bfaculté\\ de\\ médecine\\b|\\bIUT\\b|\\bfaculté\\ des\\ sciences\\b|\\bINJS\\b|\\bENS\\b|\\bfaculté\\ de\\ droit\\b|\\bESSEC\\b|\\bENSPY\\b)"
+  }
+]
