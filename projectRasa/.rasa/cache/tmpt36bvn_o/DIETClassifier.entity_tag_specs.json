@@ -1,0 +1,44 @@
+[
+  {
+    "tag_name": "entity",
+    "ids_to_tags": {
+      "1": "B-(filiere",
+      "2": "I-(filiere",
+      "3": "L-(filiere",
+      "4": "U-(filiere",
+      "5": "B-domaine",
+      "6": "I-domaine",
+      "7": "L-domaine",
+      "8": "U-domaine",
+      "9": "B-etablissement",
+      "10": "I-etablissement",
+      "11": "L-etablissement",
+      "12": "U-etablissement",
+      "13": "B-filiere",
+      "14": "I-filiere",
+      "15": "L-filiere",
+      "16": "U-filiere",
+      "0": "O"
+    },
+    "tags_to_ids": {
+      "B-(filiere": 1,
+      "I-(filiere": 2,
+      "L-(filiere": 3,
+      "U-(filiere": 4,
+      "B-domaine": 5,
+      "I-domaine": 6,
+      "L-domaine": 7,
+      "U-domaine": 8,
+      "B-etablissement": 9,
+      "I-etablissement": 10,
+      "L-etablissement": 11,
+      "U-etablissement": 12,
+      "B-filiere": 13,
+      "I-filiere": 14,
+      "L-filiere": 15,
+      "U-filiere": 16,
+      "O": 0
+    },
+    "num_tags": 17
+  }
+]

@@ -96,10 +96,10 @@ rules:
   - action: utter_hors_sujet
 
 # Règles de confirmation/refus
-- rule: Confirmation
-  steps:
-  - intent: confirmer
-  - action: action_gerer_confirmation
+#- rule: Confirmation
+#  steps:
+#  - intent: confirmer
+#  - action: action_gerer_confirmation
 
 - rule: Refus
   steps:

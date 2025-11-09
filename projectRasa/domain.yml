@@ -118,6 +118,8 @@ actions:
   - action_informations_pratiques
   - action_suggest_etablissements_domaine
   - action_filieres_etablissement
+  - action_gerer_refuser
+  - action_gerer_confirmation
 
 session_config:
   session_expiration_time: 60

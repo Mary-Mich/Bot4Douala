@@ -6,7 +6,7 @@
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
-from rasa_sdk.events import SlotSet
+from rasa_sdk.events import SlotSet, FollowupAction
 import logging
 from database.database import UniversityDatabase
 
@@ -442,4 +442,29 @@ class ActionListeEtablissements(Action):
         response += "💡 *Pour voir les filières d'un établissement spécifique, dites-moi son nom !*"
         
         dispatcher.utter_message(text=response)
+        return []
+class ActionGererConfirmation(Action):
+    def name(self) -> Text:
+        return "action_gerer_confirmation"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(
+            text="✅ Merci, je prends note de votre confirmation. Souhaitez-vous poursuivre avec la préinscription ?"
+        )
+        return []
+    
+class ActionGererRefuser(Action):
+    def name(self) -> Text:
+        return "action_gerer_refuser"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(
+            text="❌ D’accord, merci de m’avoir informé. Si vous souhaitez explorer d’autres options, je suis là pour aider."
+        )
         return []
