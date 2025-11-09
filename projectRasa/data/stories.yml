@@ -41,7 +41,7 @@ stories:
   - action: utter_fournir_choix_filiere
   - intent: confirmer
   - action: action_gerer_confirmation
-  # action_guide_preinscription
+  - action: action_guide_preinscription
 
 - story: Exploration des établissements
   steps:
@@ -120,8 +120,8 @@ stories:
     - filiere
   - action: utter_fournir_choix_filiere
   - intent: confirmer
-  - intent : action_gerer_confirmation
-  # action: action_guide_preinscription
+  - action: action_gerer_confirmation
+  - action: action_guide_preinscription
 
 - story: Salutation simple
   steps:
@@ -157,3 +157,13 @@ stories:
   - action: utter_hors_sujet
   - intent: demander_filieres
   - action: utter_demander_filieres
+
+- story: Confirmation simple
+  steps:
+  - intent: confirmer
+  - action: utter_confirmer
+
+- story: Refus
+  steps:
+  - intent: refuser
+  - action: utter_refuser

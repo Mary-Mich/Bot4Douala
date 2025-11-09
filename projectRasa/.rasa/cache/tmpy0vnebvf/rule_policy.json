@@ -1,0 +1,52 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_filieres\"}}]": "utter_demander_filieres",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_filieres\"}}, {\"prev_action\": {\"action_name\": \"utter_demander_filieres\"}, \"user\": {\"intent\": \"demander_filieres\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_guide_preinscription\"}}]": "action_guide_preinscription",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_guide_preinscription\"}}, {\"prev_action\": {\"action_name\": \"action_guide_preinscription\"}, \"user\": {\"intent\": \"demander_guide_preinscription\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"refuser\"}}]": "action_gerer_refuser",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"refuser\"}}, {\"prev_action\": {\"action_name\": \"action_gerer_refuser\"}, \"user\": {\"intent\": \"refuser\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_filieres_professionnelles\"}}]": "action_filieres_professionnelles_science",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_filieres_professionnelles\"}}, {\"prev_action\": {\"action_name\": \"action_filieres_professionnelles_science\"}, \"user\": {\"intent\": \"demander_filieres_professionnelles\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"domaine_interet\": \"should_not_be_set\"}, \"user\": {\"entities\": [\"domaine\"], \"intent\": \"fournir_domaine_interet\"}}]": "utter_suggest_etablissements",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"domaine_interet\": \"should_not_be_set\"}, \"user\": {\"entities\": [\"domaine\"], \"intent\": \"fournir_domaine_interet\"}}, {\"prev_action\": {\"action_name\": \"utter_suggest_etablissements\"}, \"slots\": {\"domaine_interet\": \"should_not_be_set\"}, \"user\": {\"entities\": [\"domaine\"], \"intent\": \"fournir_domaine_interet\"}}]": "action_suggest_etablissements_domaine",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"domaine_interet\": \"should_not_be_set\"}, \"user\": {\"entities\": [\"domaine\"], \"intent\": \"fournir_domaine_interet\"}}, {\"prev_action\": {\"action_name\": \"utter_suggest_etablissements\"}, \"slots\": {\"domaine_interet\": \"should_not_be_set\"}, \"user\": {\"entities\": [\"domaine\"], \"intent\": \"fournir_domaine_interet\"}}, {\"prev_action\": {\"action_name\": \"action_suggest_etablissements_domaine\"}, \"slots\": {\"domaine_interet\": \"should_not_be_set\"}, \"user\": {\"entities\": [\"domaine\"], \"intent\": \"fournir_domaine_interet\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"dire_au_revoir\"}}]": "utter_dire_au_revoir",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"dire_au_revoir\"}}, {\"prev_action\": {\"action_name\": \"utter_dire_au_revoir\"}, \"user\": {\"intent\": \"dire_au_revoir\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"remercier\"}}]": "utter_remercier",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"remercier\"}}, {\"prev_action\": {\"action_name\": \"utter_remercier\"}, \"user\": {\"intent\": \"remercier\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_filieres_classiques\"}}]": "action_filieres_classiques_science",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_filieres_classiques\"}}, {\"prev_action\": {\"action_name\": \"action_filieres_classiques_science\"}, \"user\": {\"intent\": \"demander_filieres_classiques\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_etablissements_domaine\"}}]": "action_suggest_etablissements_domaine",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_etablissements_domaine\"}}, {\"prev_action\": {\"action_name\": \"action_suggest_etablissements_domaine\"}, \"user\": {\"intent\": \"demander_etablissements_domaine\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_filieres_etablissement\"}}]": "action_filieres_etablissement",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_filieres_etablissement\"}}, {\"prev_action\": {\"action_name\": \"action_filieres_etablissement\"}, \"user\": {\"intent\": \"demander_filieres_etablissement\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_infos_pratiques\"}}]": "action_informations_pratiques",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_infos_pratiques\"}}, {\"prev_action\": {\"action_name\": \"action_informations_pratiques\"}, \"user\": {\"intent\": \"demander_infos_pratiques\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"saluer\"}}]": "utter_saluer",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"saluer\"}}, {\"prev_action\": {\"action_name\": \"utter_saluer\"}, \"user\": {\"intent\": \"saluer\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_conditions_admission\"}}]": "utter_demander_conditions_admission",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_conditions_admission\"}}, {\"prev_action\": {\"action_name\": \"utter_demander_conditions_admission\"}, \"user\": {\"intent\": \"demander_conditions_admission\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fallback\"}}]": "utter_fallback",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"fallback\"}}, {\"prev_action\": {\"action_name\": \"utter_fallback\"}, \"user\": {\"intent\": \"fallback\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_debouches\"}}]": "utter_demander_debouches",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_debouches\"}}, {\"prev_action\": {\"action_name\": \"utter_demander_debouches\"}, \"user\": {\"intent\": \"demander_debouches\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_etablissements\"}}]": "action_liste_etablissements",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"demander_etablissements\"}}, {\"prev_action\": {\"action_name\": \"action_liste_etablissements\"}, \"user\": {\"intent\": \"demander_etablissements\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hors_sujet\"}}]": "utter_hors_sujet",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hors_sujet\"}}, {\"prev_action\": {\"action_name\": \"utter_hors_sujet\"}, \"user\": {\"intent\": \"hors_sujet\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent session_start",
+      "predicting default action with intent back",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"domaine_interet\": \"should_not_be_set\"}, \"user\": {\"entities\": [\"domaine\"], \"intent\": \"fournir_domaine_interet\"}}, {\"prev_action\": {\"action_name\": \"utter_suggest_etablissements\"}, \"slots\": {\"domaine_interet\": \"should_not_be_set\"}, \"user\": {\"entities\": [\"domaine\"], \"intent\": \"fournir_domaine_interet\"}}]",
+      "predicting default action with intent restart",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"domaine_interet\": \"should_not_be_set\"}, \"user\": {\"entities\": [\"domaine\"], \"intent\": \"fournir_domaine_interet\"}}, {\"prev_action\": {\"action_name\": \"utter_suggest_etablissements\"}, \"slots\": {\"domaine_interet\": \"should_not_be_set\"}, \"user\": {\"entities\": [\"domaine\"], \"intent\": \"fournir_domaine_interet\"}}, {\"prev_action\": {\"action_name\": \"action_suggest_etablissements_domaine\"}, \"slots\": {\"domaine_interet\": \"should_not_be_set\"}, \"user\": {\"entities\": [\"domaine\"], \"intent\": \"fournir_domaine_interet\"}}]",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"slots\": {\"domaine_interet\": \"should_not_be_set\"}, \"user\": {\"entities\": [\"domaine\"], \"intent\": \"fournir_domaine_interet\"}}]"
+    ]
+  }
+}

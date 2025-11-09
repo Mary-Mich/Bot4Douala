@@ -1,0 +1,14 @@
+[
+  {
+    "name": "filiere",
+    "pattern": "(\\bmédecine\\b|\\binformatique\\b|\\bdroit\\b|\\bgénie\\ civil\\b|\\bsciences\\b|\\béconomie\\b|\\bbiologie\\b|\\bgestion\\b|\\bpsychologie\\b|\\bmathématiques\\b|\\bphysique\\b|\\bchimie\\b)"
+  },
+  {
+    "name": "domaine",
+    "pattern": "(\\bsciences\\b|\\bsanté\\b|\\bdroit\\b|\\btechnologie\\b|\\béconomie\\b|\\blettres\\b|\\béducation\\b|\\bsciences\\ humaines\\b|\\bsciences\\ sociales\\b)"
+  },
+  {
+    "name": "etablissement",
+    "pattern": "(\\bfaculté\\ de\\ médecine\\b|\\bIUT\\b|\\bfaculté\\ des\\ sciences\\b|\\bINJS\\b|\\bENS\\b|\\bfaculté\\ de\\ droit\\b|\\bESSEC\\b|\\bENSPY\\b)"
+  }
+]
